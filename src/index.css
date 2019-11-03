@@ -8,7 +8,7 @@ body {
   display: flex;
 }
 
-.mainMap {
+.leaflet-container {
   width: 80%;
   height: 940px;
 }

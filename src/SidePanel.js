@@ -8,8 +8,7 @@ class TravelList extends Component {
                 <h1>The map of Schengen zone</h1>
                 <p>All the markers on the map are available bus stops</p>
                 <p>You can click on a city and add it to your trip. To find your city you can zoom in/out(mouse scroll or +/- butons on the map) and drag the map.</p>
-                <h2>List of the planned cities :</h2>
-                <CityList />
+                <CityList show="Yes"/>
                 <button>Calculate the route</button>
             </div>
         )

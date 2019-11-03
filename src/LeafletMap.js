@@ -1,79 +1,77 @@
-import React, { Component } from 'react';
-import L from 'leaflet';
+import React, { Component } from 'react'
+import {Map, TileLayer, Marker, Popup, GeoJSON} from 'react-leaflet'
+import 'leaflet/dist/leaflet.css'
 import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
 
 class SchengenMap extends Component {
-    componentDidMount() {
-        // OpenStreetMap world map layer
-        let osmWorldMap = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-        let attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        let tileOsm = new L.TileLayer( osmWorldMap, {
-            subdomains: ['a','b','c'],
-            attribution: attribution
-        });
-        // Creating a map
-        let initCity = [51.196558, 9.503174]
-        let zoomLevel = 6
-        this.map = L.map('map', {
-            center: initCity,
-            zoom: zoomLevel,
-            layers: [
-                tileOsm,
-            ]
-        });
-        // Creating a pin icon, because the icon which comes by default causes errors
-        let greenIcon = new L.icon({
-            iconUrl: 'https://unpkg.com/leaflet@1.5.1/dist/images/marker-icon.png',
-            shadowUrl: 'https://unpkg.com/leaflet@1.5.1/dist/images/marker-shadow.png'
-        })
-
-        plotSchengenCoutries(this.map)
-        plotDefaultCities(this.map)
-
-        // Setting the Markercluster
-        require('react-leaflet-markercluster/dist/styles.min.css');
-
-        // Showing Schengen countries boundaries on the map
-        function plotSchengenCoutries(map) {
-            let Schengen = require('./data/europeHighRes.geo.json')
-            L.geoJson(Schengen).addTo(map)
+    constructor() {
+        super()
+        this.state = { //Ansbach
+            lat: 49.3004,
+            lng: 10.5719,
+            zoom: 6
         }
+        this.addToCityList = this.addToCityList.bind(this)
 
-        // Put cities on the map
-        function plotDefaultCities(map) {
-            let citiesFrance = require('./data/fr.json')
-            let citiesGermany = require('./data/de.json')
-            let citiesItaly = require('./data/it.json')
-            let citiesPoland = require('./data/pl.json')
-            let citiesEU = citiesGermany.concat(citiesFrance, citiesItaly, citiesPoland)
-
-            // Putting cities on the map
-            Object.entries(citiesEU).forEach(([key, city]) => {
-                L.marker(
-                    L.latLng(parseFloat(city.lat), parseFloat(city.lng)),
-                    {icon: greenIcon}
-                ).bindPopup( city.city + ", " + city.country + "<br>" +
-                    "<a href={'#'} onClick=addCityToTrip()>Add this city to the trip</a>"
-                ).addTo(map)
-            })
-        }
+        /*Bug fix for invisible markers*/
+        delete L.Icon.Default.prototype._getIconUrl;
+        L.Icon.Default.mergeOptions({
+            iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+            iconUrl: require('leaflet/dist/images/marker-icon.png'),
+            shadowUrl: require('leaflet/dist/images/marker-shadow.png')
+        });
     }
 
-    cityWalk = [];
-    // Add selected city to the trip
-    addCityToTrip() {
-        console.log('Heyyy')
-        this.cityWalk.push('bla')
-        this.map.closePopup()
+    addToCityList() {
+        console.log(this.state)
     }
-
 
     render() {
+        const initCity = [this.state.lat, this.state.lng]
+        const osmWorldMap = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+        const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        const Schengen = require('./data/europeHighRes.geo.json')
+
+        /*
+         * Prepare cities as markers on the map
+         * City JSON data are from
+         * https://simplemaps.com/data/de-cities
+         * https://simplemaps.com/data/fr-cities
+         * etc.
+         */
+        let citiesFrance = require('./data/fr.json')
+        let citiesGermany = require('./data/de.json')
+        let citiesItaly = require('./data/it.json')
+        let citiesPoland = require('./data/pl.json')
+        const citiesEU = citiesGermany.concat(citiesFrance, citiesItaly, citiesPoland)
+        const cityMarkers = citiesEU.map(city => {
+            return (
+                <Marker position={[city.lat, city.lng]} key={`${city.city}_${city.lat}_${city.lng}_marker`}>
+                    <Popup key={`${city.city}_${city.lat}_${city.lng}_popup`}>
+                        {`${city.city}, ${city.country}`}
+                        <br/>
+                        <a href={'#'} onClick={this.addToCityList}>
+                            Add this city to the trip
+                        </a>
+                    </Popup>
+                </Marker>
+            )
+        })
+
         return (
-            <div id="map" className="mainMap">
-            </div>
+            <Map center={initCity} zoom={this.state.zoom}>
+                <TileLayer
+                    url={osmWorldMap}
+                    attribution={attribution}
+                />
+                /* Show boundaries of Schengen countries on the map */
+                <GeoJSON data={Schengen}/>
+                /* Plot city markers on the map */
+                {cityMarkers}
+            </Map>
         )
     }
 }
 
-export default SchengenMap;
+export default SchengenMap
