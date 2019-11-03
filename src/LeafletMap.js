@@ -24,6 +24,13 @@ class SchengenMap extends Component {
     }
 
     addToCityList() {
+        this.setState(prevState => {
+            return {
+                lat: prevState.lat,
+                lng: prevState.lng,
+                zoom: prevState.zoom+1
+            }
+        })
         console.log(this.state)
     }
 
@@ -45,13 +52,14 @@ class SchengenMap extends Component {
         let citiesItaly = require('./data/it.json')
         let citiesPoland = require('./data/pl.json')
         const citiesEU = citiesGermany.concat(citiesFrance, citiesItaly, citiesPoland)
+        const {addCity} = this.props;
         const cityMarkers = citiesEU.map(city => {
             return (
                 <Marker position={[city.lat, city.lng]} key={`${city.city}_${city.lat}_${city.lng}_marker`}>
                     <Popup key={`${city.city}_${city.lat}_${city.lng}_popup`}>
                         {`${city.city}, ${city.country}`}
                         <br/>
-                        <a href={'#'} onClick={this.addToCityList}>
+                        <a href={'#'} onClick={addCity}>
                             Add this city to the trip
                         </a>
                     </Popup>
