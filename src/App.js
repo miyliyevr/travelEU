@@ -7,23 +7,38 @@ class App extends Component {
         super()
         this.state = {
             cityList: {
-                '1': 'Turkmenabat'
-            }
+            },
+            polylinePositions: [
+            ]
         }
     }
 
-    addCity = () => {
+    addCity = (e) => {
+        let id = e.target.id
+        let name = e.target.name
         this.setState(prevState => ({
-            cityList: {...prevState.cityList,  'foo': Math.random()}
+            cityList: {...prevState.cityList,  [id]: name}
         }))
-        console.log(this.state)
+    }
+
+    // Draw a line between cities
+    drawRoad = () => {
+        this.setState(prevState => ({
+            polylinePositions:
+            Object.keys(this.state.cityList).map(
+                id => {
+                    let latlong = id.split("_")
+                    return ([latlong[0], latlong[1]])
+                }
+            )
+        }))
     }
 
     render() {
         return (
             <div className="App flex-container">
-                <SchengenMap addCity={this.addCity}/>
-                <TravelList cityListApp={this.state.cityList}/>
+                <SchengenMap addCity={this.addCity} polilineList={this.state.polylinePositions}/>
+                <TravelList cityListApp={this.state.cityList} drawRoad={this.drawRoad}/>
             </div>
         );
     }

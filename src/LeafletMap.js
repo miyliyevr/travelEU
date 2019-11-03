@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Map, TileLayer, Marker, Popup, GeoJSON} from 'react-leaflet'
+import {Map, TileLayer, Marker, Popup, GeoJSON, Polyline} from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
@@ -59,7 +59,10 @@ class SchengenMap extends Component {
                     <Popup key={`${city.city}_${city.lat}_${city.lng}_popup`}>
                         {`${city.city}, ${city.country}`}
                         <br/>
-                        <a href={'#'} onClick={addCity}>
+                        <a href={'#'}
+                           onClick={addCity}
+                           id={`${city.lat}_${city.lng}`}
+                           name={`${city.city}, ${city.country}`}>
                             Add this city to the trip
                         </a>
                     </Popup>
@@ -77,6 +80,10 @@ class SchengenMap extends Component {
                 <GeoJSON data={Schengen}/>
                 /* Plot city markers on the map */
                 {cityMarkers}
+                <Polyline
+                    positions={this.props.polilineList}
+                    color={'green'}
+                />
             </Map>
         )
     }
