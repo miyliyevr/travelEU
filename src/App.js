@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import Map from './LeafletMap'
+import SchengenMap from './LeafletMap'
+import TravelList from "./SidePanel";
 
 class App extends Component {
   render() {
-
       return (
-      <div className="App">
+      <div className="App flex-container">
         {/*<Header />*/}
-        <Map />
+        <SchengenMap />
+        <TravelList />
       </div>
     );
   }

@@ -4,8 +4,13 @@
   "private": true,
   "dependencies": {
     "leaflet": "^1.5.1",
+    "leaflet.markercluster": "^1.4.1",
+    "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-leaflet": "^2.4.0",
+    "react-leaflet-figure-editor": "^0.2.4",
+    "react-leaflet-markercluster": "^1.1.8",
     "react-scripts": "0.9.5"
   },
   "devDependencies": {},
