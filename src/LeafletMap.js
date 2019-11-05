@@ -76,9 +76,9 @@ class SchengenMap extends Component {
                     url={osmWorldMap}
                     attribution={attribution}
                 />
-                /* Show boundaries of Schengen countries on the map */
+                {/* Show boundaries of Schengen countries on the map */}
                 <GeoJSON data={Schengen}/>
-                /* Plot city markers on the map */
+                {/* Plot city markers on the map */}
                 {cityMarkers}
                 <Polyline
                     positions={this.props.polilineList}
