@@ -47,11 +47,14 @@ class SchengenMap extends Component {
          * https://simplemaps.com/data/fr-cities
          * etc.
          */
-        let citiesFrance = require('./data/fr.json')
-        let citiesGermany = require('./data/de.json')
-        let citiesItaly = require('./data/it.json')
-        let citiesPoland = require('./data/pl.json')
-        const citiesEU = citiesGermany.concat(citiesFrance, citiesItaly, citiesPoland)
+        let citiesEU = []
+        // const geoJsonFiles = ['fr.json', 'de.json', 'it.json', 'pl.json']
+        const geoJsonFiles = ['myCustomList.json']
+        for (let i = 0; i < geoJsonFiles.length; i++) {
+            let country = require('./data/' + geoJsonFiles[i])
+            citiesEU.push(...country)
+        }
+
         const {addCity} = this.props;
         const cityMarkers = citiesEU.map(city => {
             return (

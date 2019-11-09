@@ -1,0 +1,247 @@
+[
+    {
+        "city": "Pico Island, Azores",
+        "country": "Portugal",
+        "lat": "38.470139",
+        "lng": "-28.361218",
+        "attraction": "You can see whales here"
+    },
+    {
+        "city": "Funchal, Madeira Island",
+        "country": "Portugal",
+        "lat": "32.650706",
+        "lng": "-16.909855",
+        "attraction": "Dolphin&Whale boat trip. Sun in winter."
+    },
+    {
+        "city": "Zurich",
+        "country": "Switzerland",
+        "lat": "47.349175",
+        "lng": "8.510999",
+        "attraction": ""
+    },
+    {
+        "city": "Bern",
+        "country": "Switzerland",
+        "lat": "46.962975",
+        "lng": "7.420025",
+        "attraction": ""
+    },
+    {
+        "city": "Vaduz",
+        "country": "Liechtenstein",
+        "lat": "47.142278",
+        "lng": "9.520855",
+        "attraction": "Reachable only by train"
+    },
+    {
+        "city": "San Marino",
+        "country": "San Marino",
+        "lat": "43.941019",
+        "lng": "12.456702",
+        "attraction": "Great Castle"
+    },
+    {
+        "city": "Lyon",
+        "country": "France",
+        "lat": "45.770517",
+        "lng": "4.777506",
+        "attraction": "Euronews green colored office"
+    },
+    {
+        "city": "Andorra",
+        "country": "Andorra",
+        "lat": "42.545777",
+        "lng": "1.581643",
+        "attraction": ""
+    },
+    {
+        "city": "Ajaccio, Corsica Island",
+        "country": "France",
+        "lat": "41.945591",
+        "lng": "8.754559",
+        "attraction": ""
+    },
+    {
+        "city": "Valencia",
+        "country": "Spain",
+        "lat": "39.470242",
+        "lng": "-0.376800",
+        "attraction": ""
+    },
+    {
+        "city": "Malaga",
+        "country": "Spain",
+        "lat": "36.721275",
+        "lng": "-4.421399",
+        "attraction": "Winter sun, bridge, mountain walk"
+    },
+    {
+        "city": "Sevilla",
+        "country": "Spain",
+        "lat": "37.382641",
+        "lng": "-5.996300",
+        "attraction": ""
+    },
+    {
+        "city": "Tarifa",
+        "country": "Spain",
+        "lat": "36.012824",
+        "lng": "-5.605180",
+        "attraction": ""
+    },
+    {
+        "city": "Mijas (near Malaga)",
+        "country": "Spain",
+        "lat": "36.595240",
+        "lng": "-4.637047",
+        "attraction": "Cozy town, sun in winter"
+    },
+    {
+        "city": "Bilbao",
+        "country": "Spain",
+        "lat": "43.256962",
+        "lng": "-2.923460",
+        "attraction": "The Guggenheim (monument)"
+    },
+    {
+        "city": "Braga",
+        "country": "Portugal",
+        "lat": "41.552063",
+        "lng": "-8.423271",
+        "attraction": "Guimarães Castle (wow!)"
+    },
+    {
+        "city": "Monte Isola",
+        "country": "Italy",
+        "lat": "45.717220",
+        "lng": "10.080950",
+        "attraction": ""
+    },
+    {
+        "city": "Metz (near Saarland)",
+        "country": "France",
+        "lat": "49.114460",
+        "lng": "6.172090",
+        "attraction": "wow!"
+    },
+    {
+        "city": "Dinant",
+        "country": "Belgium",
+        "lat": "50.260660",
+        "lng": "4.912170",
+        "attraction": "wow!"
+    },
+    {
+        "city": "Mount Saint-Michel",
+        "country": "France",
+        "lat": "48.635080",
+        "lng": "-1.510640",
+        "attraction": "Dolphins and 2nd most visited place in France after Eiffel Tower."
+    },
+    {
+        "city": "Ouessant, Brittany",
+        "country": "France",
+        "lat": "48.457320",
+        "lng": "-5.096470",
+        "attraction": "Island with Dolphins"
+    },
+    {
+        "city": "Nice (near Cannes and Monaco)",
+        "country": "France",
+        "lat": "43.710175",
+        "lng": "7.261953",
+        "attraction": "The bubbles palace(building)"
+    },
+    {
+        "city": "Monaco",
+        "country": "Monaco",
+        "lat": "43.738419",
+        "lng": "7.424616",
+        "attraction": ""
+    },
+    {
+        "city": "Sante-Maxime",
+        "country": "France",
+        "lat": "43.307210",
+        "lng": "6.641320",
+        "attraction": "Little Corsica"
+    },
+    {
+        "city": "Bologna",
+        "country": "Italy",
+        "lat": "44.494888",
+        "lng": "11.342616",
+        "attraction": ""
+    },
+    {
+        "city": "Turin",
+        "country": "Italy",
+        "lat": "45.070339",
+        "lng": "7.686864",
+        "attraction": ""
+    },
+    {
+        "city": "Avila",
+        "country": "Spain",
+        "lat": "40.656391",
+        "lng": "-4.700430",
+        "attraction": "Medieval"
+    },
+    {
+        "city": "Carcassonne (close to Andorra)",
+        "country": "France",
+        "lat": "43.212162",
+        "lng": "2.353663",
+        "attraction": "Medieval"
+    },
+    {
+        "city": "Lukova",
+        "country": "Chechia",
+        "lat": "50.016514",
+        "lng": "13.160595",
+        "attraction": "Kostel svatého Jiří (scary place: a church with plaster figures)"
+    },
+    {
+        "city": "Ulm",
+        "country": "Germany",
+        "lat": "48.399620",
+        "lng": "9.996610",
+        "attraction": "Highest church in the world."
+    },
+    {
+        "city": "Hamburg",
+        "country": "Germany",
+        "lat": "53.551086",
+        "lng": "9.993682",
+        "attraction": "Highest concentration of highest churches in the world."
+    },
+    {
+        "city": "Dresden",
+        "country": "Germany",
+        "lat": "51.050990",
+        "lng": "13.733630",
+        "attraction": ""
+    },
+    {
+        "city": "Stuttgart",
+        "country": "Germany",
+        "lat": "48.777110",
+        "lng": "9.180770",
+        "attraction": ""
+    },
+    {
+        "city": "Konstanz",
+        "country": "Germany",
+        "lat": "47.661940",
+        "lng": "9.172430",
+        "attraction": ""
+    },
+    {
+        "city": "Poznan",
+        "country": "Poland",
+        "lat": "52.406376",
+        "lng": "16.925167",
+        "attraction": ""
+    }
+]
