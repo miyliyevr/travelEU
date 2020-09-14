@@ -6,7 +6,7 @@ Developed with React.js.
 External libraries used: Leaflet.js (for visualization of geographic features) and additional library for implementation of dijkstra algorithm.
 For this task several files in "data" folder were used as a storage of maps and cities related geographic information.
 
-##Sources:
+## Sources:
 //https://github.com/isellsoap/deutschlandGeoJSON
 //http://www.diva-gis.org/gdata
 European country boundaries: https://geojson-maps.ash.ms/
